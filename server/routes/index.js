@@ -5,4 +5,5 @@ module.exports = (app) => {
         message: 'Welcome to the Api'
     }));
     app.post('/api/users', usersController.create);
+    app.post('/api/auth', usersController.auth);
 }
