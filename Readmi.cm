@@ -1,0 +1,5 @@
+create model exemple:
+sequelize model:create --name TableName --attributes content:string,name:boolen
+
+add migrate
+sequelize db:migrate
