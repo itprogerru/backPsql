@@ -26,7 +26,7 @@ module.exports = {
                     email,id
                 };
                 const token = jwt.sign(userInfo, CONFIG.jwtSecret, {expiresIn: CONFIG.jwtTokenLife});
-                const refreshToken = jwt.sign(userInfo, CONFIG.jwtSecret, {expiresIn: CONFIG.jwtRefreshTokenLife});
+                const refreshToken = jwt.sign(req.body.password, CONFIG.jwtSecret, {expiresIn: CONFIG.jwtRefreshTokenLife});
                 const response = {
                     token, refreshToken
                 }
@@ -39,7 +39,6 @@ module.exports = {
             .catch(error => res.status(400).send(error));
     },
     token (req, res) {
-        console.log(req.headers);
         const refreshToken = req.body.refreshToken;
         if (refreshToken) {
             jwt.verify(refreshToken, CONFIG.jwtSecret, (err, decoded) => {
