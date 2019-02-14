@@ -1,5 +1,5 @@
 const usersController = require('../controllers').users;
-const checkedToken = require('../middleware/checkedToken')
+const checkedToken = require('../middleware/checkedToken');
 
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({

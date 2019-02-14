@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index",
+    "start:dev": "SET NODE_ENV=dev && nodemon index",
+    "test": "mocha ./test --recursive --exit"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,9 @@
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.3"
   }
 }
